@@ -1,0 +1,25 @@
+{
+  "name": "tool-import",
+  "version": "1.0.0",
+  "description": "tool import product nanostick",
+  "main": "index.js",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.17",
+    "vue-axios": "^2.1.3",
+    "vue-router": "^3.0.1",
+    "vue-sweetalert2": "^1.5.2",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.1",
+    "@vue/cli-service": "^3.0.1",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "author": "hung.vo",
+  "license": "ISC"
+}

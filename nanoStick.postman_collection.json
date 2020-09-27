@@ -1,0 +1,1976 @@
+{
+	"info": {
+		"_postman_id": "6d970837-cf4a-4a6e-98e3-392bc24261ce",
+		"name": "nanoStick",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"code\": \"8RQ2RNkON1bL-axTGbEabrfUwfDFNRigQRBr-AR1XBE\",\n    \"orgId\": \"1000405714\",\n    \"status\": \"login\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nanostcktest.egany.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"nanostcktest",
+						"egany",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"8RQ2RNkON1bL-axTGbEabrfUwfDFNRigQRBr-AR1XBE\",\n    \"orgId\": \"1000405714\",\n    \"status\": \"login\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/auth/login",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:31:05 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"d3-h3C3ePRzyrBEY1ENREFBrUYdF9k\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI\",\n    \"exp\": 1601022665\n}"
+				}
+			]
+		},
+		{
+			"name": "Create campaign",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-nanostick-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/product.xlsx"
+						},
+						{
+							"key": "sku_code_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/sku_manager.xlsx"
+						},
+						{
+							"key": "variant_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/variant_manager.xlsx"
+						},
+						{
+							"key": "title",
+							"value": "Test import san pham",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nanostcktest.egany.com/api/campaigns",
+					"protocol": "https",
+					"host": [
+						"nanostcktest",
+						"egany",
+						"com"
+					],
+					"path": [
+						"api",
+						"campaigns"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create campaign",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "564"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:53:03 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"234-GaOoZuFfhOtUdBXrs3luOyDMQmo\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"pending\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:03.915Z\",\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get campaigns",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-nanostick-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/product.xlsx"
+						},
+						{
+							"key": "sku_code_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/sku_manager.xlsx"
+						},
+						{
+							"key": "variant_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/variant_manager.xlsx"
+						},
+						{
+							"key": "title",
+							"value": "Test import san pham",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nanostcktest.egany.com/api/campaigns?sort=-id&status=completed&limit=1&page=1",
+					"protocol": "https",
+					"host": [
+						"nanostcktest",
+						"egany",
+						"com"
+					],
+					"path": [
+						"api",
+						"campaigns"
+					],
+					"query": [
+						{
+							"key": "sort",
+							"value": "-id"
+						},
+						{
+							"key": "status",
+							"value": "completed"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create campaign",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "564"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:53:03 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"234-GaOoZuFfhOtUdBXrs3luOyDMQmo\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"pending\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:03.915Z\",\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				},
+				{
+					"name": "Get campaigns",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns?sort=-id&status=completed&limit=1&page=1",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-id"
+								},
+								{
+									"key": "status",
+									"value": "completed"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "788"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:58:04 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"314-R7cDS6aCzk60BjPws5F520cQm/8\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 2,\n    \"limit\": 1,\n    \"page\": 1,\n    \"totalPages\": 2,\n    \"data\": [\n        {\n            \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n            \"status\": \"completed\",\n            \"type\": \"import_product\",\n            \"title\": \"Test import san pham\",\n            \"productFileName\": \"product.xlsx\",\n            \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n            \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n            \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n            \"variantManagerFileName\": \"variant_manager.xlsx\",\n            \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n            \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n            \"updatedAt\": \"2020-09-22T08:53:36.797Z\",\n            \"totalMappingImage\": 12,\n            \"totalMappingCollect\": 4,\n            \"totalMappingCollectCompleted\": 4,\n            \"totalMappingImageCompleted\": 12,\n            \"totalProductCreate\": 2,\n            \"totalProductCreateComplated\": 2,\n            \"id\": \"5f69bb6f35e1a50011604875\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get campaign",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-nanostick-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/product.xlsx"
+						},
+						{
+							"key": "sku_code_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/sku_manager.xlsx"
+						},
+						{
+							"key": "variant_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/variant_manager.xlsx"
+						},
+						{
+							"key": "title",
+							"value": "Test import san pham",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nanostcktest.egany.com/api/campaigns/5f69bb6f35e1a50011604875",
+					"protocol": "https",
+					"host": [
+						"nanostcktest",
+						"egany",
+						"com"
+					],
+					"path": [
+						"api",
+						"campaigns",
+						"5f69bb6f35e1a50011604875"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get campaigns",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns?sort=-id&status=completed&limit=1&page=1",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-id"
+								},
+								{
+									"key": "status",
+									"value": "completed"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "788"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:58:04 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"314-R7cDS6aCzk60BjPws5F520cQm/8\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 2,\n    \"limit\": 1,\n    \"page\": 1,\n    \"totalPages\": 2,\n    \"data\": [\n        {\n            \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n            \"status\": \"completed\",\n            \"type\": \"import_product\",\n            \"title\": \"Test import san pham\",\n            \"productFileName\": \"product.xlsx\",\n            \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n            \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n            \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n            \"variantManagerFileName\": \"variant_manager.xlsx\",\n            \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n            \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n            \"updatedAt\": \"2020-09-22T08:53:36.797Z\",\n            \"totalMappiggImage\": 12,\n            \"totalMappingCollect\": 4,\n            \"totalMappingCollectCompleted\": 4,\n            \"totalMappingImageCompleted\": 12,\n            \"totalProductCreate\": 2,\n            \"totalProductCreateComplated\": 2,\n            \"id\": \"5f69bb6f35e1a50011604875\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get campaign",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns/5f69bb6f35e1a50011604875",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns",
+								"5f69bb6f35e1a50011604875"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "733"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:59:18 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2dd-SSA9f7xJ6P/iDNgGt1yTsd6xI1o\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"completed\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:36.797Z\",\n    \"totalMappingImage\": 12,\n    \"totalMappingCollect\": 4,\n    \"totalMappingCollectCompleted\": 4,\n    \"totalMappingImageCompleted\": 12,\n    \"totalProductCreate\": 2,\n    \"totalProductCreateComplated\": 2,\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				},
+				{
+					"name": "Create campaign",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "564"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:53:03 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"234-GaOoZuFfhOtUdBXrs3luOyDMQmo\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"pending\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:03.915Z\",\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get products progress",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-nanostick-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/product.xlsx"
+						},
+						{
+							"key": "sku_code_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/sku_manager.xlsx"
+						},
+						{
+							"key": "variant_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/variant_manager.xlsx"
+						},
+						{
+							"key": "title",
+							"value": "Test import san pham",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nanostcktest.egany.com/api/products-progress?campaignId=5f69bb6f35e1a50011604875&limit=1",
+					"protocol": "https",
+					"host": [
+						"nanostcktest",
+						"egany",
+						"com"
+					],
+					"path": [
+						"api",
+						"products-progress"
+					],
+					"query": [
+						{
+							"key": "campaignId",
+							"value": "5f69bb6f35e1a50011604875"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get products progress",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/products-progress?campaignId=5f69bb6f35e1a50011604875&limit=1",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"products-progress"
+							],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "5f69bb6f35e1a50011604875"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 09:01:40 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1230-Ztxb8/YO0KkTaHNjjX9C1QHaf8c\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Length",
+							"value": "945"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 2,\n    \"limit\": 1,\n    \"page\": 1,\n    \"totalPages\": 2,\n    \"data\": [\n        {\n            \"rawData\": {\n                \"collections\": [\n                    \"Test Collect 1\",\n                    \"Test Collect 2\"\n                ],\n                \"option1ArrayCode\": [\n                    \"0001\",\n                    \"0002\",\n                    \"0003\"\n                ],\n                \"option2ArrayCode\": [\n                    \"0201\",\n                    \"0202\"\n                ],\n                \"option3ArrayCode\": [\n                    \"01\",\n                    \"02\",\n                    \"03\"\n                ],\n                \"titleCode\": \"0001\",\n                \"categoryCode\": \"01\",\n                \"vendor\": \"NanoStick\",\n                \"description\": \"<div> Mã mô tả HTML </div>\",\n                \"option1Name\": \"Tính năng\",\n                \"option1GroupCode\": \"4\",\n                \"option2Name\": \"Ốp lưng in\",\n                \"option2GroupCode\": \"6\",\n                \"option3Name\": \"Màu sắc\",\n                \"option3GroupCode\": \"3\",\n                \"tags\": \"#SALE1, #SALE2, #SALE3\",\n                \"basePrice\": 0,\n                \"baseCompareAtPrice\": null\n            },\n            \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n            \"status\": \"created\",\n            \"campaignId\": \"5f69bb6f35e1a50011604875\",\n            \"title\": \"Code 0001\",\n            \"images\": [],\n            \"variants\": [\n                {\n                    \"id\": \"1061701663\",\n                    \"price\": 120000,\n                    \"compareAtPrice\": 150000,\n                    \"sku\": \"01.0001.01.0001.01.0201\",\n                    \"barcode\": \"01.0001.01.0001.01.0201\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701664\",\n                    \"price\": 140000,\n                    \"compareAtPrice\": 170000,\n                    \"sku\": \"01.0001.02.0001.01.0201\",\n                    \"barcode\": \"01.0001.02.0001.01.0201\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701665\",\n                    \"price\": 160000,\n                    \"compareAtPrice\": 190000,\n                    \"sku\": \"01.0001.03.0001.01.0201\",\n                    \"barcode\": \"01.0001.03.0001.01.0201\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701666\",\n                    \"price\": 130000,\n                    \"compareAtPrice\": 160000,\n                    \"sku\": \"01.0001.01.0001.01.0202\",\n                    \"barcode\": \"01.0001.01.0001.01.0202\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701667\",\n                    \"price\": 150000,\n                    \"compareAtPrice\": 180000,\n                    \"sku\": \"01.0001.02.0001.01.0202\",\n                    \"barcode\": \"01.0001.02.0001.01.0202\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701668\",\n                    \"price\": 170000,\n                    \"compareAtPrice\": 200000,\n                    \"sku\": \"01.0001.03.0001.01.0202\",\n                    \"barcode\": \"01.0001.03.0001.01.0202\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701669\",\n                    \"price\": 180000,\n                    \"compareAtPrice\": 210000,\n                    \"sku\": \"01.0001.01.0002.01.0201\",\n                    \"barcode\": \"01.0001.01.0002.01.0201\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701670\",\n                    \"price\": 200000,\n                    \"compareAtPrice\": 230000,\n                    \"sku\": \"01.0001.02.0002.01.0201\",\n                    \"barcode\": \"01.0001.02.0002.01.0201\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701671\",\n                    \"price\": 220000,\n                    \"compareAtPrice\": 250000,\n                    \"sku\": \"01.0001.03.0002.01.0201\",\n                    \"barcode\": \"01.0001.03.0002.01.0201\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701672\",\n                    \"price\": 190000,\n                    \"compareAtPrice\": 220000,\n                    \"sku\": \"01.0001.01.0002.01.0202\",\n                    \"barcode\": \"01.0001.01.0002.01.0202\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701673\",\n                    \"price\": 210000,\n                    \"compareAtPrice\": 240000,\n                    \"sku\": \"01.0001.02.0002.01.0202\",\n                    \"barcode\": \"01.0001.02.0002.01.0202\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701674\",\n                    \"price\": 230000,\n                    \"compareAtPrice\": 260000,\n                    \"sku\": \"01.0001.03.0002.01.0202\",\n                    \"barcode\": \"01.0001.03.0002.01.0202\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701675\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.01.0003.01.0201\",\n                    \"barcode\": \"01.0001.01.0003.01.0201\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701676\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.02.0003.01.0201\",\n                    \"barcode\": \"01.0001.02.0003.01.0201\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701677\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.03.0003.01.0201\",\n                    \"barcode\": \"01.0001.03.0003.01.0201\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701678\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.01.0003.01.0202\",\n                    \"barcode\": \"01.0001.01.0003.01.0202\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701679\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.02.0003.01.0202\",\n                    \"barcode\": \"01.0001.02.0003.01.0202\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701680\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.03.0003.01.0202\",\n                    \"barcode\": \"01.0001.03.0003.01.0202\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Đen\"\n                }\n            ],\n            \"options\": [],\n            \"createdAt\": \"2020-09-22T08:53:04.391Z\",\n            \"updatedAt\": \"2020-09-22T08:53:16.428Z\",\n            \"hrvProductId\": \"1028262663\",\n            \"id\": \"5f69bb7035e1a50011604876\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get campaign",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns/5f69bb6f35e1a50011604875",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns",
+								"5f69bb6f35e1a50011604875"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "733"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:59:18 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2dd-SSA9f7xJ6P/iDNgGt1yTsd6xI1o\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"completed\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:36.797Z\",\n    \"totalMappiggImage\": 12,\n    \"totalMappingCollect\": 4,\n    \"totalMappingCollectCompleted\": 4,\n    \"totalMappingImageCompleted\": 12,\n    \"totalProductCreate\": 2,\n    \"totalProductCreateComplated\": 2,\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				},
+				{
+					"name": "Create campaign",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "564"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:53:03 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"234-GaOoZuFfhOtUdBXrs3luOyDMQmo\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"pending\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:03.915Z\",\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				},
+				{
+					"name": "Get campaigns",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns?sort=-id&status=completed&limit=1&page=1",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-id"
+								},
+								{
+									"key": "status",
+									"value": "completed"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "788"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:58:04 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"314-R7cDS6aCzk60BjPws5F520cQm/8\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 2,\n    \"limit\": 1,\n    \"page\": 1,\n    \"totalPages\": 2,\n    \"data\": [\n        {\n            \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n            \"status\": \"completed\",\n            \"type\": \"import_product\",\n            \"title\": \"Test import san pham\",\n            \"productFileName\": \"product.xlsx\",\n            \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n            \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n            \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n            \"variantManagerFileName\": \"variant_manager.xlsx\",\n            \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n            \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n            \"updatedAt\": \"2020-09-22T08:53:36.797Z\",\n            \"totalMappiggImage\": 12,\n            \"totalMappingCollect\": 4,\n            \"totalMappingCollectCompleted\": 4,\n            \"totalMappingImageCompleted\": 12,\n            \"totalProductCreate\": 2,\n            \"totalProductCreateComplated\": 2,\n            \"id\": \"5f69bb6f35e1a50011604875\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get product progress",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-nanostick-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "product_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/product.xlsx"
+						},
+						{
+							"key": "sku_code_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/sku_manager.xlsx"
+						},
+						{
+							"key": "variant_file",
+							"type": "file",
+							"src": "/Users/admin/Downloads/variant_manager.xlsx"
+						},
+						{
+							"key": "title",
+							"value": "Test import san pham",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://nanostcktest.egany.com/api/products-progress/5f69bb7035e1a50011604876",
+					"protocol": "https",
+					"host": [
+						"nanostcktest",
+						"egany",
+						"com"
+					],
+					"path": [
+						"api",
+						"products-progress",
+						"5f69bb7035e1a50011604876"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get campaign",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns/5f69bb6f35e1a50011604875",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns",
+								"5f69bb6f35e1a50011604875"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "733"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:59:18 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"2dd-SSA9f7xJ6P/iDNgGt1yTsd6xI1o\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"completed\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:36.797Z\",\n    \"totalMappiggImage\": 12,\n    \"totalMappingCollect\": 4,\n    \"totalMappingCollectCompleted\": 4,\n    \"totalMappingImageCompleted\": 12,\n    \"totalProductCreate\": 2,\n    \"totalProductCreateComplated\": 2,\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				},
+				{
+					"name": "Get products progress",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/products-progress?campaignId=5f69bb6f35e1a50011604875&limit=1",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"products-progress"
+							],
+							"query": [
+								{
+									"key": "campaignId",
+									"value": "5f69bb6f35e1a50011604875"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 09:01:40 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1230-Ztxb8/YO0KkTaHNjjX9C1QHaf8c\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Length",
+							"value": "945"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 2,\n    \"limit\": 1,\n    \"page\": 1,\n    \"totalPages\": 2,\n    \"data\": [\n        {\n            \"rawData\": {\n                \"collections\": [\n                    \"Test Collect 1\",\n                    \"Test Collect 2\"\n                ],\n                \"option1ArrayCode\": [\n                    \"0001\",\n                    \"0002\",\n                    \"0003\"\n                ],\n                \"option2ArrayCode\": [\n                    \"0201\",\n                    \"0202\"\n                ],\n                \"option3ArrayCode\": [\n                    \"01\",\n                    \"02\",\n                    \"03\"\n                ],\n                \"titleCode\": \"0001\",\n                \"categoryCode\": \"01\",\n                \"vendor\": \"NanoStick\",\n                \"description\": \"<div> Mã mô tả HTML </div>\",\n                \"option1Name\": \"Tính năng\",\n                \"option1GroupCode\": \"4\",\n                \"option2Name\": \"Ốp lưng in\",\n                \"option2GroupCode\": \"6\",\n                \"option3Name\": \"Màu sắc\",\n                \"option3GroupCode\": \"3\",\n                \"tags\": \"#SALE1, #SALE2, #SALE3\",\n                \"basePrice\": 0,\n                \"baseCompareAtPrice\": null\n            },\n            \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n            \"status\": \"created\",\n            \"campaignId\": \"5f69bb6f35e1a50011604875\",\n            \"title\": \"Code 0001\",\n            \"images\": [],\n            \"variants\": [\n                {\n                    \"id\": \"1061701663\",\n                    \"price\": 120000,\n                    \"compareAtPrice\": 150000,\n                    \"sku\": \"01.0001.01.0001.01.0201\",\n                    \"barcode\": \"01.0001.01.0001.01.0201\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701664\",\n                    \"price\": 140000,\n                    \"compareAtPrice\": 170000,\n                    \"sku\": \"01.0001.02.0001.01.0201\",\n                    \"barcode\": \"01.0001.02.0001.01.0201\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701665\",\n                    \"price\": 160000,\n                    \"compareAtPrice\": 190000,\n                    \"sku\": \"01.0001.03.0001.01.0201\",\n                    \"barcode\": \"01.0001.03.0001.01.0201\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701666\",\n                    \"price\": 130000,\n                    \"compareAtPrice\": 160000,\n                    \"sku\": \"01.0001.01.0001.01.0202\",\n                    \"barcode\": \"01.0001.01.0001.01.0202\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701667\",\n                    \"price\": 150000,\n                    \"compareAtPrice\": 180000,\n                    \"sku\": \"01.0001.02.0001.01.0202\",\n                    \"barcode\": \"01.0001.02.0001.01.0202\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701668\",\n                    \"price\": 170000,\n                    \"compareAtPrice\": 200000,\n                    \"sku\": \"01.0001.03.0001.01.0202\",\n                    \"barcode\": \"01.0001.03.0001.01.0202\",\n                    \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701669\",\n                    \"price\": 180000,\n                    \"compareAtPrice\": 210000,\n                    \"sku\": \"01.0001.01.0002.01.0201\",\n                    \"barcode\": \"01.0001.01.0002.01.0201\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701670\",\n                    \"price\": 200000,\n                    \"compareAtPrice\": 230000,\n                    \"sku\": \"01.0001.02.0002.01.0201\",\n                    \"barcode\": \"01.0001.02.0002.01.0201\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701671\",\n                    \"price\": 220000,\n                    \"compareAtPrice\": 250000,\n                    \"sku\": \"01.0001.03.0002.01.0201\",\n                    \"barcode\": \"01.0001.03.0002.01.0201\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701672\",\n                    \"price\": 190000,\n                    \"compareAtPrice\": 220000,\n                    \"sku\": \"01.0001.01.0002.01.0202\",\n                    \"barcode\": \"01.0001.01.0002.01.0202\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701673\",\n                    \"price\": 210000,\n                    \"compareAtPrice\": 240000,\n                    \"sku\": \"01.0001.02.0002.01.0202\",\n                    \"barcode\": \"01.0001.02.0002.01.0202\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701674\",\n                    \"price\": 230000,\n                    \"compareAtPrice\": 260000,\n                    \"sku\": \"01.0001.03.0002.01.0202\",\n                    \"barcode\": \"01.0001.03.0002.01.0202\",\n                    \"option1\": \"Silicon Viền Màu\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701675\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.01.0003.01.0201\",\n                    \"barcode\": \"01.0001.01.0003.01.0201\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701676\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.02.0003.01.0201\",\n                    \"barcode\": \"01.0001.02.0003.01.0201\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701677\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.03.0003.01.0201\",\n                    \"barcode\": \"01.0001.03.0003.01.0201\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Arsenal\",\n                    \"option3\": \"Đen\"\n                },\n                {\n                    \"id\": \"1061701678\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.01.0003.01.0202\",\n                    \"barcode\": \"01.0001.01.0003.01.0202\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trong suốt\"\n                },\n                {\n                    \"id\": \"1061701679\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.02.0003.01.0202\",\n                    \"barcode\": \"01.0001.02.0003.01.0202\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Trắng\"\n                },\n                {\n                    \"id\": \"1061701680\",\n                    \"price\": 0,\n                    \"compareAtPrice\": 0,\n                    \"sku\": \"01.0001.03.0003.01.0202\",\n                    \"barcode\": \"01.0001.03.0003.01.0202\",\n                    \"option1\": \"Slicon Màu - Dẻo\",\n                    \"option2\": \"Ốp lưng Bóng rổ\",\n                    \"option3\": \"Đen\"\n                }\n            ],\n            \"options\": [],\n            \"createdAt\": \"2020-09-22T08:53:04.391Z\",\n            \"updatedAt\": \"2020-09-22T08:53:16.428Z\",\n            \"hrvProductId\": \"1028262663\",\n            \"id\": \"5f69bb7035e1a50011604876\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Create campaign",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "564"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:53:03 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"234-GaOoZuFfhOtUdBXrs3luOyDMQmo\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"pending\",\n    \"type\": \"import_product\",\n    \"title\": \"Test import san pham\",\n    \"productFileName\": \"product.xlsx\",\n    \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n    \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n    \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n    \"variantManagerFileName\": \"variant_manager.xlsx\",\n    \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n    \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n    \"updatedAt\": \"2020-09-22T08:53:03.915Z\",\n    \"id\": \"5f69bb6f35e1a50011604875\"\n}"
+				},
+				{
+					"name": "Get campaigns",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/campaigns?sort=-id&status=completed&limit=1&page=1",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"campaigns"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "-id"
+								},
+								{
+									"key": "status",
+									"value": "completed"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Length",
+							"value": "788"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 08:58:04 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"314-R7cDS6aCzk60BjPws5F520cQm/8\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"total\": 2,\n    \"limit\": 1,\n    \"page\": 1,\n    \"totalPages\": 2,\n    \"data\": [\n        {\n            \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n            \"status\": \"completed\",\n            \"type\": \"import_product\",\n            \"title\": \"Test import san pham\",\n            \"productFileName\": \"product.xlsx\",\n            \"productFilePath\": \"/usr/src/app/dist/public/files/product.xlsx\",\n            \"skuCodeManagerFileName\": \"sku_manager.xlsx\",\n            \"skuCodeManagerFilePath\": \"/usr/src/app/dist/public/files/sku_manager.xlsx\",\n            \"variantManagerFileName\": \"variant_manager.xlsx\",\n            \"variantManagerFielPath\": \"/usr/src/app/dist/public/files/variant_manager.xlsx\",\n            \"createdAt\": \"2020-09-22T08:53:03.915Z\",\n            \"updatedAt\": \"2020-09-22T08:53:36.797Z\",\n            \"totalMappiggImage\": 12,\n            \"totalMappingCollect\": 4,\n            \"totalMappingCollectCompleted\": 4,\n            \"totalMappingImageCompleted\": 12,\n            \"totalProductCreate\": 2,\n            \"totalProductCreateComplated\": 2,\n            \"id\": \"5f69bb6f35e1a50011604875\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Get product progress",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-nanostick-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjY5YjVhYTY2N2Q5NTQ5M2E3Yjk1Y2UiLCJpYXQiOjE2MDA3NjM0NjUsImV4cCI6MTYwMTAyMjY2NX0.9bjD5AcMbsyX_ujQrvCaL33KHxwucKr1LffnE3ipoeI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "product_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/product.xlsx"
+								},
+								{
+									"key": "sku_code_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/sku_manager.xlsx"
+								},
+								{
+									"key": "variant_file",
+									"type": "file",
+									"src": "/Users/admin/Downloads/variant_manager.xlsx"
+								},
+								{
+									"key": "title",
+									"value": "Test import san pham",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://nanostcktest.egany.com/api/products-progress/5f69bb7035e1a50011604876",
+							"protocol": "https",
+							"host": [
+								"nanostcktest",
+								"egany",
+								"com"
+							],
+							"path": [
+								"api",
+								"products-progress",
+								"5f69bb7035e1a50011604876"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 22 Sep 2020 09:01:54 GMT"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"11f9-2keskM0GxsPdBRUCkz/GJYUKZKk\""
+						},
+						{
+							"key": "Server",
+							"value": "Caddy"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Length",
+							"value": "910"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"rawData\": {\n        \"collections\": [\n            \"Test Collect 1\",\n            \"Test Collect 2\"\n        ],\n        \"option1ArrayCode\": [\n            \"0001\",\n            \"0002\",\n            \"0003\"\n        ],\n        \"option2ArrayCode\": [\n            \"0201\",\n            \"0202\"\n        ],\n        \"option3ArrayCode\": [\n            \"01\",\n            \"02\",\n            \"03\"\n        ],\n        \"titleCode\": \"0001\",\n        \"categoryCode\": \"01\",\n        \"vendor\": \"NanoStick\",\n        \"description\": \"<div> Mã mô tả HTML </div>\",\n        \"option1Name\": \"Tính năng\",\n        \"option1GroupCode\": \"4\",\n        \"option2Name\": \"Ốp lưng in\",\n        \"option2GroupCode\": \"6\",\n        \"option3Name\": \"Màu sắc\",\n        \"option3GroupCode\": \"3\",\n        \"tags\": \"#SALE1, #SALE2, #SALE3\",\n        \"basePrice\": 0,\n        \"baseCompareAtPrice\": null\n    },\n    \"shopId\": \"5f69b5aa667d95493a7b95ce\",\n    \"status\": \"created\",\n    \"campaignId\": \"5f69bb6f35e1a50011604875\",\n    \"title\": \"Code 0001\",\n    \"images\": [],\n    \"variants\": [\n        {\n            \"id\": \"1061701663\",\n            \"price\": 120000,\n            \"compareAtPrice\": 150000,\n            \"sku\": \"01.0001.01.0001.01.0201\",\n            \"barcode\": \"01.0001.01.0001.01.0201\",\n            \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Trong suốt\"\n        },\n        {\n            \"id\": \"1061701664\",\n            \"price\": 140000,\n            \"compareAtPrice\": 170000,\n            \"sku\": \"01.0001.02.0001.01.0201\",\n            \"barcode\": \"01.0001.02.0001.01.0201\",\n            \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Trắng\"\n        },\n        {\n            \"id\": \"1061701665\",\n            \"price\": 160000,\n            \"compareAtPrice\": 190000,\n            \"sku\": \"01.0001.03.0001.01.0201\",\n            \"barcode\": \"01.0001.03.0001.01.0201\",\n            \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Đen\"\n        },\n        {\n            \"id\": \"1061701666\",\n            \"price\": 130000,\n            \"compareAtPrice\": 160000,\n            \"sku\": \"01.0001.01.0001.01.0202\",\n            \"barcode\": \"01.0001.01.0001.01.0202\",\n            \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Trong suốt\"\n        },\n        {\n            \"id\": \"1061701667\",\n            \"price\": 150000,\n            \"compareAtPrice\": 180000,\n            \"sku\": \"01.0001.02.0001.01.0202\",\n            \"barcode\": \"01.0001.02.0001.01.0202\",\n            \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Trắng\"\n        },\n        {\n            \"id\": \"1061701668\",\n            \"price\": 170000,\n            \"compareAtPrice\": 200000,\n            \"sku\": \"01.0001.03.0001.01.0202\",\n            \"barcode\": \"01.0001.03.0001.01.0202\",\n            \"option1\": \"Chống Sốc Chuẩn Mỹ\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Đen\"\n        },\n        {\n            \"id\": \"1061701669\",\n            \"price\": 180000,\n            \"compareAtPrice\": 210000,\n            \"sku\": \"01.0001.01.0002.01.0201\",\n            \"barcode\": \"01.0001.01.0002.01.0201\",\n            \"option1\": \"Silicon Viền Màu\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Trong suốt\"\n        },\n        {\n            \"id\": \"1061701670\",\n            \"price\": 200000,\n            \"compareAtPrice\": 230000,\n            \"sku\": \"01.0001.02.0002.01.0201\",\n            \"barcode\": \"01.0001.02.0002.01.0201\",\n            \"option1\": \"Silicon Viền Màu\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Trắng\"\n        },\n        {\n            \"id\": \"1061701671\",\n            \"price\": 220000,\n            \"compareAtPrice\": 250000,\n            \"sku\": \"01.0001.03.0002.01.0201\",\n            \"barcode\": \"01.0001.03.0002.01.0201\",\n            \"option1\": \"Silicon Viền Màu\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Đen\"\n        },\n        {\n            \"id\": \"1061701672\",\n            \"price\": 190000,\n            \"compareAtPrice\": 220000,\n            \"sku\": \"01.0001.01.0002.01.0202\",\n            \"barcode\": \"01.0001.01.0002.01.0202\",\n            \"option1\": \"Silicon Viền Màu\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Trong suốt\"\n        },\n        {\n            \"id\": \"1061701673\",\n            \"price\": 210000,\n            \"compareAtPrice\": 240000,\n            \"sku\": \"01.0001.02.0002.01.0202\",\n            \"barcode\": \"01.0001.02.0002.01.0202\",\n            \"option1\": \"Silicon Viền Màu\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Trắng\"\n        },\n        {\n            \"id\": \"1061701674\",\n            \"price\": 230000,\n            \"compareAtPrice\": 260000,\n            \"sku\": \"01.0001.03.0002.01.0202\",\n            \"barcode\": \"01.0001.03.0002.01.0202\",\n            \"option1\": \"Silicon Viền Màu\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Đen\"\n        },\n        {\n            \"id\": \"1061701675\",\n            \"price\": 0,\n            \"compareAtPrice\": 0,\n            \"sku\": \"01.0001.01.0003.01.0201\",\n            \"barcode\": \"01.0001.01.0003.01.0201\",\n            \"option1\": \"Slicon Màu - Dẻo\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Trong suốt\"\n        },\n        {\n            \"id\": \"1061701676\",\n            \"price\": 0,\n            \"compareAtPrice\": 0,\n            \"sku\": \"01.0001.02.0003.01.0201\",\n            \"barcode\": \"01.0001.02.0003.01.0201\",\n            \"option1\": \"Slicon Màu - Dẻo\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Trắng\"\n        },\n        {\n            \"id\": \"1061701677\",\n            \"price\": 0,\n            \"compareAtPrice\": 0,\n            \"sku\": \"01.0001.03.0003.01.0201\",\n            \"barcode\": \"01.0001.03.0003.01.0201\",\n            \"option1\": \"Slicon Màu - Dẻo\",\n            \"option2\": \"Ốp lưng Arsenal\",\n            \"option3\": \"Đen\"\n        },\n        {\n            \"id\": \"1061701678\",\n            \"price\": 0,\n            \"compareAtPrice\": 0,\n            \"sku\": \"01.0001.01.0003.01.0202\",\n            \"barcode\": \"01.0001.01.0003.01.0202\",\n            \"option1\": \"Slicon Màu - Dẻo\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Trong suốt\"\n        },\n        {\n            \"id\": \"1061701679\",\n            \"price\": 0,\n            \"compareAtPrice\": 0,\n            \"sku\": \"01.0001.02.0003.01.0202\",\n            \"barcode\": \"01.0001.02.0003.01.0202\",\n            \"option1\": \"Slicon Màu - Dẻo\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Trắng\"\n        },\n        {\n            \"id\": \"1061701680\",\n            \"price\": 0,\n            \"compareAtPrice\": 0,\n            \"sku\": \"01.0001.03.0003.01.0202\",\n            \"barcode\": \"01.0001.03.0003.01.0202\",\n            \"option1\": \"Slicon Màu - Dẻo\",\n            \"option2\": \"Ốp lưng Bóng rổ\",\n            \"option3\": \"Đen\"\n        }\n    ],\n    \"options\": [],\n    \"createdAt\": \"2020-09-22T08:53:04.391Z\",\n    \"updatedAt\": \"2020-09-22T08:53:16.428Z\",\n    \"hrvProductId\": \"1028262663\",\n    \"id\": \"5f69bb7035e1a50011604876\"\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
