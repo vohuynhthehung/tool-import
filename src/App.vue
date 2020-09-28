@@ -11,14 +11,17 @@
                             </div>
                             <div v-if="login">
                                 <Form />
-                                <button @click="logOut" type="button" class="nano-btn">Đăng xuất</button>
-                                <button @click="getList" type="button" class="nano-btn">Lấy thông tin campain mới nhất</button>
+                                <button @click="logOut" type="button" class="nano-btn logout-btn">Đăng xuất</button>
+
+                                <!-- <button @click="getList" type="button" class="nano-btn">Lấy thông tin campain mới nhất</button>
                                 <button @click="getOne" type="button" class="nano-btn">Lấy một</button>
                                 <button @click="getProducts" type="button" class="nano-btn">Get products</button>
-                                <button @click="testProduct" type="button" class="nano-btn">Test product</button>
+                                <button @click="testProduct" type="button" class="nano-btn">Test product</button> -->
+
+
                                 <button @click="viewDetail" type="button" class="nano-btn">Xem chi tiết</button>
 
-<div class="summary">
+<!-- <div class="summary">
     <div class="summary_item">
         <span class="summary_title">Số sản phẩm:</span>
         <span class="summary_number">{{this.pd_success}}/{{this.pd_total}}</span>
@@ -31,7 +34,7 @@
         <span class="summary_title">Số hình ảnh sản phẩm:</span>
         <span class="summary_number">{{this.img_success}}/{{this.img_total}}</span>
     </div>
-</div>
+</div> -->
 
 
 <!-- <div class="summary_item">Số nhóm sản phẩm: 12/100</div>
@@ -245,6 +248,7 @@ export default {
         }
     },
     mounted: function() {
+        debugger;
         let loginQuery = decodeURIComponent(location.search).substring(1);
         if (loginQuery.length) {
             debugger;
@@ -257,9 +261,17 @@ export default {
             //Auth.login(code, orgId)
             //return;
         }
+        debugger;
+        if(location.hostname == "localhost"){
+            var localToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEzMTYwNjcsImV4cCI6MTYwMTU3NTI2N30.e_W9nXffzUR7t6ROru-iHYQpKlNSFk0u-2j5SD9b1Ig";
+            localStorage.setItem("access_token", localToken);
+        }
+
         if(localStorage.getItem("access_token") != null){
             this.login = true;
         }
+
+        localStorage.removeItem("current_id");
     }
 }
 </script>
@@ -416,6 +428,7 @@ body {
 }
 
 #input {
+    position: relative;
     background: var(--card-bg);
     width: 100%;
     padding: 20px;
@@ -466,5 +479,13 @@ body {
     font-weight: bold;
     color: #939041;
     cursor: pointer;
+}
+
+.logout-btn{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin: 0;
+    padding: 8px 15px;
 }
 </style>

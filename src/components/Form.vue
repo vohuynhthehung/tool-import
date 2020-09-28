@@ -138,6 +138,10 @@ export default {
                         html: `<p>Nhập sản phẩm thành công!</p>`,
                         confirmButtonText: "Đóng"
                     });
+
+                    var id = localStorage.getItem("current_id");
+                	this.getOneFromForm(id);
+
                 }).catch(err => {
                     /*this.$swal({
                         title: "",
@@ -167,8 +171,7 @@ export default {
                     confirmButtonText: "Đóng"
                 });
 
-                var id = localStorage.getItem("current_id");
-                this.getOneFromForm(id);
+                
             }
         },
         getProducts111: async function(campaignId) {
@@ -226,5 +229,10 @@ export default {
 #import-product img {
     width: 40px;
     margin-bottom: 10px;
+}
+.summary{
+	    margin-top: 20px;
+    padding: 10px;
+    border: 2px dotted;
 }
 </style>
