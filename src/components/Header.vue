@@ -1,6 +1,5 @@
 <template>
-    <div><img src="../assets/logo.png"/></div>
-    
+    <div class="ega-text--center"><img src="../assets/logo.png"/></div>
 </template>
 
 <script>

@@ -18,7 +18,7 @@ export class Auth {
         return true;
     }
 
-    static login(code, orgid) {
+    static login111(code, orgid) {
         const data = {
             code,
             orgid,
@@ -34,4 +34,29 @@ export class Auth {
             }
         })
     }
+
+
+    static login(code, orgId) {
+        const data = {
+            code,
+            orgId,
+            status: 'login'
+        }
+        axios({
+            "url": "https://nanostcktest.egany.com/api/auth/login",
+            "method": "POST",
+            "headers": {
+                "Content-Type": "application/json",
+                "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": {
+                "code": code,
+                "orgId": orgId,
+                "status": "login"
+            }
+        })
+    }
+
+
 }
