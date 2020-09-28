@@ -194,15 +194,16 @@ export default {
                     confirmButtonText: "Đóng"
                 });
             } else {
-                axios({
+                await axios({
                     "url": `${APP_URL}/products-progress?campaignId=${id}&limit=100`,
                     "method": "GET",
                     "headers": {
-                        "x-nanostick-token": access_Token_new,
+                        "x-nanostick-token": localStorage.getItem("access_token"),
                         "cache-control": "no-cache",
                     }
                 }).then(res => {
                     debugger;
+                    console.log("viewDetail success")
                     this.items = res.data.data;
                 }).catch(err => {
                     //console.log("err here", JSON.parse(err));
@@ -249,6 +250,7 @@ export default {
     },
     mounted: function() {
         debugger;
+        console.log("mounted");
         let loginQuery = decodeURIComponent(location.search).substring(1);
         if (loginQuery.length) {
             debugger;
@@ -263,7 +265,7 @@ export default {
         }
         debugger;
         if(location.hostname == "localhost"){
-            var localToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEzMTYwNjcsImV4cCI6MTYwMTU3NTI2N30.e_W9nXffzUR7t6ROru-iHYQpKlNSFk0u-2j5SD9b1Ig";
+            var localToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEzMTkzMTIsImV4cCI6MTYwMTU3ODUxMn0.BTAhrpz9yePPEoE5iQ5HdXSFzkm5whLW-Gv4bsEf1jc";
             localStorage.setItem("access_token", localToken);
         }
 
@@ -271,7 +273,7 @@ export default {
             this.login = true;
         }
 
-        localStorage.removeItem("current_id");
+        //localStorage.removeItem("current_id");
     }
 }
 </script>

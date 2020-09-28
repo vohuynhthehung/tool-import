@@ -114,7 +114,7 @@ export default {
                 data.append("title", "upload from app");
 
                 var accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEyNjk5NTksImV4cCI6MTYwMTUyOTE1OX0.M3ZydJp9Hm-fLrd4ZAC6NPBayIzis28CvsnJk4EJWTo";
-                axios({
+                await axios({
                     "async": true,
                     "crossDomain": true,
                     method: "POST",
@@ -128,19 +128,41 @@ export default {
                     "mimeType": "multipart/form-data"
                 }).then(res => {
                     debugger;
-                    console.log("thành công - submit", res);
+                    
+                    var campaignStatus = res.data.status;
                     var campaignId = res.data.id;
                     //var campaignId = "5f6d608b7457fd0018f1274d";
                     //this.getProducts111(campaignId);
-                    localStorage.setItem("current_id", campaignId)
-                    this.$swal({
-                        title: "",
-                        html: `<p>Nhập sản phẩm thành công!</p>`,
-                        confirmButtonText: "Đóng"
-                    });
 
-                    var id = localStorage.getItem("current_id");
-                	this.getOneFromForm(id);
+                    this.$swal({
+                            title: "",
+                            html: `<p>Đang tiến hành nhập liệu!</p>`,
+                            confirmButtonText: "Đóng"
+                        });
+
+                    console.log("thành công - submit", campaignStatus);
+                    console.log("thành công - submit", campaignId);
+
+                    if (campaignStatus == "completed") {
+
+                        localStorage.setItem("current_id", campaignId)
+                        this.$swal({
+                            title: "",
+                            html: `<p>Nhập sản phẩm thành công!</p>`,
+                            confirmButtonText: "Đóng"
+                        });
+
+                        var id = localStorage.getItem("current_id");
+                        this.getOneFromForm(id);
+                    }
+
+                    if (campaignStatus == "error") {
+                    	this.$swal({
+                            title: "",
+                            html: `<p>Lỗi trong quá trình nhập liệu!</p>`,
+                            confirmButtonText: "Đóng"
+                        });
+                    }
 
                 }).catch(err => {
                     /*this.$swal({
@@ -171,7 +193,7 @@ export default {
                     confirmButtonText: "Đóng"
                 });
 
-                
+
             }
         },
         getProducts111: async function(campaignId) {
@@ -194,7 +216,7 @@ export default {
 
         getOneFromForm: async function(id) {
             debugger;
-            axios({
+            await axios({
                 "url": `https://nanostcktest.egany.com/api/campaigns/${id}`,
                 "method": "GET",
                 "headers": {
@@ -230,8 +252,9 @@ export default {
     width: 40px;
     margin-bottom: 10px;
 }
-.summary{
-	    margin-top: 20px;
+
+.summary {
+    margin-top: 20px;
     padding: 10px;
     border: 2px dotted;
 }
