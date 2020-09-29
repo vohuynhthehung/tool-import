@@ -21,7 +21,7 @@
             </label>
             <button type="submit" class="nano-btn">Nhập sản phẩm</button>
         </form>
-<!--         <div class="summary">
+        <!--         <div class="summary">
             <div class="summary_item">
                 <span class="summary_title">22222Số sản phẩm:</span>
                 <span class="summary_number">{{this.pd_success}}/{{this.pd_total}}</span>
@@ -103,7 +103,7 @@ export default {
         },
         submit: async function(e) {
             debugger;
-
+            var import_time = this.getDate(Date.now());
 
             e.preventDefault();
             if (this.pd_files != null && this.sku_files != null && this.variant_files != null) {
@@ -111,7 +111,7 @@ export default {
                 data.append('product_file', this.pd_files);
                 data.append('sku_code_file', this.sku_files);
                 data.append('variant_file', this.variant_files);
-                data.append("title", "upload from app");
+                data.append("title", `import from app at ${import_time}`);
 
                 var accessToken = localStorage.getItem("access_token");
                 await axios({
@@ -128,17 +128,17 @@ export default {
                     "mimeType": "multipart/form-data"
                 }).then(res => {
                     debugger;
-                    
+
                     var campaignStatus = res.data.status;
                     var campaignId = res.data.id;
                     //var campaignId = "5f6d608b7457fd0018f1274d";
                     //this.getProducts111(campaignId);
 
                     this.$swal({
-                            title: "",
-                            html: `<p>Đang tiến hành nhập liệu!</p>`,
-                            confirmButtonText: "Đóng"
-                        });
+                        title: "",
+                        html: `<p>Đang tiến hành nhập liệu!</p>`,
+                        confirmButtonText: "Đóng"
+                    });
 
                     console.log("thành công - submit", campaignStatus);
                     console.log("thành công - submit", campaignId);
@@ -159,7 +159,7 @@ export default {
                     }
 
                     if (campaignStatus == "error") {
-                    	this.$swal({
+                        this.$swal({
                             title: "",
                             html: `<p>Lỗi trong quá trình nhập liệu!</p>`,
                             confirmButtonText: "Đóng"
@@ -239,6 +239,25 @@ export default {
                 console.log("err here", err.response.data);
                 console.log("có lỗi", err.response.data.message);
             });
+        },
+
+        getDate: function(date) {
+            var d = new Date(date),
+                month = '' + (d.getMonth() + 1),
+                day = '' + d.getDate(),
+                year = d.getFullYear(),
+                hour = d.getHours(),
+                minute = d.getMinutes(),
+                second = d.getSeconds();
+
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+            if (hour.length < 2) hour = '0' + hour;
+            if (minute.length < 2) minute = '0' + minute;
+            if (second.length < 2) second = '0' + second;
+
+
+            return [hour, minute, second].join(':') + " " + [year, month, day].join('-');
         }
 
 
@@ -256,12 +275,13 @@ export default {
 }
 
 .summary {
-	display: none;
+    display: none;
     margin-top: 20px;
     padding: 10px;
     border: 2px dotted;
 }
-.summary.active{
-	display: block;
+
+.summary.active {
+    display: block;
 }
 </style>
