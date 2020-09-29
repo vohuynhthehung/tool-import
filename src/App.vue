@@ -12,16 +12,17 @@
                             <div v-if="login">
                                 <Form />
                                 <button @click="logOut" type="button" class="nano-btn logout-btn">Đăng xuất</button>
-
+<p> Hoặc </p>
+                                <a @click="viewCampaignProcess">Xem tiến trình nhập sản phẩm</a>
                                 <!-- <button @click="getList" type="button" class="nano-btn">Lấy thông tin campain mới nhất</button>
                                 <button @click="getOne" type="button" class="nano-btn">Lấy một</button>
                                 <button @click="getProducts" type="button" class="nano-btn">Get products</button>
                                 <button @click="testProduct" type="button" class="nano-btn">Test product</button> -->
 
 
-                                <button @click="viewDetail" type="button" class="nano-btn">Xem chi tiết</button>
+                                
 
-<!-- <div class="summary">
+<div class="summary" v-bind:class="{ active: detail_show }">
     <div class="summary_item">
         <span class="summary_title">Số sản phẩm:</span>
         <span class="summary_number">{{this.pd_success}}/{{this.pd_total}}</span>
@@ -34,7 +35,9 @@
         <span class="summary_title">Số hình ảnh sản phẩm:</span>
         <span class="summary_number">{{this.img_success}}/{{this.img_total}}</span>
     </div>
-</div> -->
+    <button @click="viewDetail" type="button" class="nano-btn">Xem chi tiết</button>
+</div>
+
 
 
 <!-- <div class="summary_item">Số nhóm sản phẩm: 12/100</div>
@@ -107,6 +110,7 @@ export default {
     data: function() {
         return {
             login: false,
+            detail_show: false,
             items: null,
             pd_total: 0,
             pd_success: 0,
@@ -246,6 +250,39 @@ export default {
         },
         logInAction: function() {
             window.location = APP_ORGID;
+        },
+        viewCampaignProcess: async function(){
+            if(localStorage.getItem("current_id") == null){
+                this.$swal({
+                    title: "",
+                    html: `<p>Chưa có thông tin</p>`,
+                    confirmButtonText: "Đóng"
+                });
+            } else {
+            var id = localStorage.getItem("current_id");
+            await axios({
+                "url": `https://nanostcktest.egany.com/api/campaigns/${id}`,
+                "method": "GET",
+                "headers": {
+                    "x-nanostick-token": localStorage.getItem("access_token"),
+                    "cache-control": "no-cache"
+                }
+            }).then(res => {
+                debugger;
+                this.detail_show = true;
+                console.log("thành công - getone", res.data.status);
+                this.pd_success = res.data.totalProductCreateComplated;
+                this.pd_total = res.data.totalProductCreate;
+                this.coll_success = res.data.totalMappingCollectCompleted;
+                this.coll_total = res.data.totalMappingCollect;
+                this.img_success = res.data.totalMappingImageCompleted;
+                this.img_total = res.data.totalMappingImage;
+            }).catch(err => {
+                //console.log("err here", JSON.parse(err));
+                console.log("err here", err.response.data);
+                console.log("có lỗi", err.response.data.message);
+            });
+        }
         }
     },
     mounted: function() {
@@ -489,5 +526,12 @@ body {
     right: 20px;
     margin: 0;
     padding: 8px 15px;
+}
+a{
+    cursor: pointer;
+    color: #0b67c1;
+    font-weight: bold;
+    margin:  auto;
+    display:inline-block
 }
 </style>

@@ -21,9 +21,9 @@
             </label>
             <button type="submit" class="nano-btn">Nhập sản phẩm</button>
         </form>
-        <div class="summary">
+<!--         <div class="summary">
             <div class="summary_item">
-                <span class="summary_title">Số sản phẩm:</span>
+                <span class="summary_title">22222Số sản phẩm:</span>
                 <span class="summary_number">{{this.pd_success}}/{{this.pd_total}}</span>
             </div>
             <div class="summary_item">
@@ -34,7 +34,7 @@
                 <span class="summary_title">Số hình ảnh sản phẩm:</span>
                 <span class="summary_number">{{this.img_success}}/{{this.img_total}}</span>
             </div>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
@@ -142,6 +142,8 @@ export default {
 
                     console.log("thành công - submit", campaignStatus);
                     console.log("thành công - submit", campaignId);
+
+                    localStorage.setItem("current_id", campaignId)
 
                     if (campaignStatus == "completed") {
 
@@ -254,8 +256,12 @@ export default {
 }
 
 .summary {
+	display: none;
     margin-top: 20px;
     padding: 10px;
     border: 2px dotted;
+}
+.summary.active{
+	display: block;
 }
 </style>
