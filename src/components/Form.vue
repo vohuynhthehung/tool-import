@@ -113,7 +113,7 @@ export default {
                 data.append('variant_file', this.variant_files);
                 data.append("title", "upload from app");
 
-                var accessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEyNjk5NTksImV4cCI6MTYwMTUyOTE1OX0.M3ZydJp9Hm-fLrd4ZAC6NPBayIzis28CvsnJk4EJWTo";
+                var accessToken = localStorage.getItem("access_token");
                 await axios({
                     "async": true,
                     "crossDomain": true,
