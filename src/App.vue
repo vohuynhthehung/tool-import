@@ -12,38 +12,23 @@
                             <div v-if="login">
                                 <Form />
                                 <button @click="logOut" type="button" class="nano-btn logout-btn">Đăng xuất</button>
-<p> Hoặc </p>
+                                <p> Hoặc </p>
                                 <a @click="viewCampaignProcess">Xem tiến trình nhập sản phẩm</a>
-                                <!-- <button @click="getList" type="button" class="nano-btn">Lấy thông tin campain mới nhất</button>
-                                <button @click="getOne" type="button" class="nano-btn">Lấy một</button>
-                                <button @click="getProducts" type="button" class="nano-btn">Get products</button>
-                                <button @click="testProduct" type="button" class="nano-btn">Test product</button> -->
-
-
-                                
-
-<div class="summary" v-bind:class="{ active: detail_show }">
-    <div class="summary_item">
-        <span class="summary_title">Số sản phẩm:</span>
-        <span class="summary_number">{{this.pd_success}}/{{this.pd_total}}</span>
-    </div>
-    <div class="summary_item">
-        <span class="summary_title">Số nhóm sản phẩm:</span>
-        <span class="summary_number">{{this.coll_success}}/{{this.coll_total}}</span>
-    </div>
-    <div class="summary_item">
-        <span class="summary_title">Số hình ảnh sản phẩm:</span>
-        <span class="summary_number">{{this.img_success}}/{{this.img_total}}</span>
-    </div>
-    <button @click="viewDetail" type="button" class="nano-btn">Xem chi tiết</button>
-</div>
-
-
-
-<!-- <div class="summary_item">Số nhóm sản phẩm: 12/100</div>
-    <div class="summary_item">Số hình ảnh sản phẩm 5/20</div> -->
-
-
+                                <div class="summary" v-bind:class="{ active: detail_show }">
+                                    <div class="summary_item">
+                                        <span class="summary_title">Số sản phẩm:</span>
+                                        <span class="summary_number">{{this.pd_success}}/{{this.pd_total}}</span>
+                                    </div>
+                                    <div class="summary_item">
+                                        <span class="summary_title">Số nhóm sản phẩm:</span>
+                                        <span class="summary_number">{{this.coll_success}}/{{this.coll_total}}</span>
+                                    </div>
+                                    <div class="summary_item">
+                                        <span class="summary_title">Số hình ảnh sản phẩm:</span>
+                                        <span class="summary_number">{{this.img_success}}/{{this.img_total}}</span>
+                                    </div>
+                                    <button @click="viewDetail" type="button" class="nano-btn">Xem chi tiết</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,15 +55,15 @@
 <script>
 import Vue from "vue";
 import VueSweetalert2 from "vue-sweetalert2";
-
+import axios from 'axios';
 import Header from "./components/Header.vue";
 import Form from "./components/Form.vue";
 import { Auth } from "./services/auth";
-import axios from 'axios';
 import { APP_URL } from "./share/constant";
 import { LOGIN_URL } from "./share/constant";
 import { APP_ORGID } from "./share/constant";
-import { IMPORT_PRODUCT_URL } from "./share/constant";
+import { CAMPAIGNS_URL } from "./share/constant";
+
 
 const options = {
     confirmButtonColor: "#ffa600",
@@ -94,12 +79,6 @@ const getQuery = (queryString, key) => {
         return "";
     }
 };
-
-var access_Token_old = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEwMDM0NjYsImV4cCI6MTYwMTI2MjY2Nn0.5npP9UfPOy9Dyowmz6avzocI1zaFopuve2ElIXIWcT4";
-
-var access_Token_new111 = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEyNjk5NTksImV4cCI6MTYwMTUyOTE1OX0.M3ZydJp9Hm-fLrd4ZAC6NPBayIzis28CvsnJk4EJWTo";
-
-var access_Token_new = localStorage.getItem("access_token");
 
 Vue.use(VueSweetalert2, options);
 export default {
@@ -117,110 +96,16 @@ export default {
             coll_total: 0,
             coll_success: 0,
             img_total: 0,
-            img_success: 0,
-            access_Token_new: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEyNjk5NTksImV4cCI6MTYwMTUyOTE1OX0.M3ZydJp9Hm-fLrd4ZAC6NPBayIzis28CvsnJk4EJWTo"
+            img_success: 0
         }
     },
     methods: {
-        testProduct: async function(e) {
-            var campaignId = "5f6d608b7457fd0018f1274d";
-            this.getProducts(campaignId);
+        logInAction: function() {
+            window.location = APP_ORGID;
         },
-        getList: async function(e) {
-            debugger;
+        logIn: function(code, orgId) {
             axios({
-                "url": "https://nanostcktest.egany.com/api/campaigns?sort=-id&status=completed&limit=1&page=1",
-                "method": "GET",
-                "headers": {
-                    "x-nanostick-token": this.access_Token_new,
-                    "cache-control": "no-cache"
-                }
-            }).then(res => {
-                console.log("thành công", JSON.stringify(res));
-                this.$swal({
-                    title: "",
-                    html: `<p>THÀNH CÔNG!. Hiện Có tổng cộng ${res.data.total} Campaigns</p>`,
-                    confirmButtonText: "Đóng"
-                });
-            }).catch(err => {
-                //console.log("err here", JSON.parse(err));
-                console.log("err here", err.response.data);
-                console.log("có lỗi", err.response.data.message);
-            });
-        },
-        getOne: async function(e) {
-            debugger;
-            console.log("đang chạy111");
-            axios({
-                "url": "https://nanostcktest.egany.com/api/campaigns/5f719db00c388a0018f961fb",
-                "method": "GET",
-                "headers": {
-                    "x-nanostick-token": this.access_Token_new,
-                    "cache-control": "no-cache"
-                }
-            }).then(res => {
-                debugger;
-                console.log("thành công", JSON.stringify(res));
-                this.pd_success = res.data.totalProductCreateComplated;
-                this.pd_total = res.data.totalProductCreate;
-                this.coll_success = res.data.totalMappingCollectCompleted;
-                this.coll_total = res.data.totalMappingCollect;
-                this.img_success = res.data.totalMappingImageCompleted;
-                this.img_total = res.data.totalMappingImage;
-            }).catch(err => {
-                //console.log("err here", JSON.parse(err));
-                console.log("err here", err.response.data);
-                console.log("có lỗi", err.response.data.message);
-            });
-        },
-        getProducts: async function(e) {
-            axios({
-                "url": `https://nanostcktest.egany.com/api/products-progress?campaignId=5f6d608b7457fd0018f1274d&limit=100`,
-                "method": "GET",
-                "headers": {
-                    "x-nanostick-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEyNjk5NTksImV4cCI6MTYwMTUyOTE1OX0.M3ZydJp9Hm-fLrd4ZAC6NPBayIzis28CvsnJk4EJWTo",
-                    "cache-control": "no-cache",
-                }
-            }).then(res => {
-                this.items = res.data.data;
-            }).catch(err => {
-                //console.log("err here", JSON.parse(err));
-                console.log("err here", err.response.data);
-                console.log("có lỗi", err.response.data.message);
-            });
-        },
-        viewDetail: async function(e) {
-            var id = localStorage.getItem("current_id");
-            if (id == null) {
-                this.$swal({
-                    title: "",
-                    html: `<p>Chưa có thông tin</p>`,
-                    confirmButtonText: "Đóng"
-                });
-            } else {
-                await axios({
-                    "url": `${APP_URL}/products-progress?campaignId=${id}&limit=100`,
-                    "method": "GET",
-                    "headers": {
-                        "x-nanostick-token": localStorage.getItem("access_token"),
-                        "cache-control": "no-cache",
-                    }
-                }).then(res => {
-                    debugger;
-                    console.log("viewDetail success")
-                    this.items = res.data.data;
-                }).catch(err => {
-                    //console.log("err here", JSON.parse(err));
-                    console.log("err here", err.response.data);
-                    console.log("có lỗi", err.response.data.message);
-                });
-            }
-        },
-        logIn: function(code,orgId) {
-            debugger;
-            console.log("zzzzz",LOGIN_URL);
-            axios({
-                "url": "https://nanostcktest.egany.com/api/auth/login",
+                "url": LOGIN_URL,
                 "method": "POST",
                 "headers": {
                     "Content-Type": "application/json",
@@ -233,84 +118,104 @@ export default {
                     "status": "login"
                 }
             }).then(res => {
-                localStorage.setItem("access_token", res.data.accessToken);
+                localStorage.setItem("data_login", res.data);
                 this.login = true;
                 location = location.origin;
             }).catch(err => {
                 this.$swal({
                     title: "",
                     html: `<p>${err.response.data.message}</p>`,
-                    confirmButtonText: "Đóng111"
+                    confirmButtonText: "Đóng"
                 });
             });
         },
         logOut: function(e) {
-            localStorage.removeItem("access_token");
+            localStorage.removeItem("data_login");
             this.login = false;
         },
-        logInAction: function() {
-            window.location = APP_ORGID;
-        },
-        viewCampaignProcess: async function(){
-            if(localStorage.getItem("current_id") == null){
+        viewCampaignProcess: async function() {
+            if (localStorage.getItem("current_campaign_id") == null) {
                 this.$swal({
                     title: "",
                     html: `<p>Chưa có thông tin</p>`,
                     confirmButtonText: "Đóng"
                 });
             } else {
-            var id = localStorage.getItem("current_id");
-            await axios({
-                "url": `https://nanostcktest.egany.com/api/campaigns/${id}`,
-                "method": "GET",
-                "headers": {
-                    "x-nanostick-token": localStorage.getItem("access_token"),
-                    "cache-control": "no-cache"
-                }
-            }).then(res => {
-                debugger;
-                this.detail_show = true;
-                console.log("thành công - getone", res.data.status);
-                this.pd_success = res.data.totalProductCreateComplated;
-                this.pd_total = res.data.totalProductCreate;
-                this.coll_success = res.data.totalMappingCollectCompleted;
-                this.coll_total = res.data.totalMappingCollect;
-                this.img_success = res.data.totalMappingImageCompleted;
-                this.img_total = res.data.totalMappingImage;
-            }).catch(err => {
-                //console.log("err here", JSON.parse(err));
-                console.log("err here", err.response.data);
-                console.log("có lỗi", err.response.data.message);
-            });
-        }
+                const current_campaign_id = localStorage.getItem("current_campaign_id");
+                const access_token = Auth.getAccessToken();
+                await axios({
+                    "url": `${CAMPAIGNS_URL}/${current_campaign_id}`,
+                    "method": "GET",
+                    "headers": {
+                        "x-nanostick-token": access_token,
+                        "cache-control": "no-cache"
+                    }
+                }).then(res => {
+                    this.detail_show = true;
+
+                    this.pd_success = res.data.totalProductCreateComplated;
+                    this.pd_total = res.data.totalProductCreate;
+                    this.coll_success = res.data.totalMappingCollectCompleted;
+                    this.coll_total = res.data.totalMappingCollect;
+                    this.img_success = res.data.totalMappingImageCompleted;
+                    this.img_total = res.data.totalMappingImage;
+                }).catch(err => {
+                    console.log("err here", err.response.data);
+                    console.log("có lỗi", err.response.data.message);
+                });
+            }
+        },
+        viewDetail: async function(e) {
+            const current_campaign_id = localStorage.getItem("current_campaign_id");
+            const access_token = Auth.getAccessToken();
+            if (current_campaign_id == null) {
+                this.$swal({
+                    title: "",
+                    html: `<p>Chưa có thông tin</p>`,
+                    confirmButtonText: "Đóng"
+                });
+            } else {
+                await axios({
+                    "url": `${APP_URL}/products-progress?campaignId=${current_campaign_id}&limit=100`,
+                    "method": "GET",
+                    "headers": {
+                        "x-nanostick-token": access_token,
+                        "cache-control": "no-cache",
+                    }
+                }).then(res => {
+                    this.items = res.data.data;
+                }).catch(err => {
+                    console.log("err here", err.response.data);
+                    console.log("có lỗi", err.response.data.message);
+                });
+            }
         }
     },
     mounted: function() {
-        debugger;
-        console.log("mounted");
         let loginQuery = decodeURIComponent(location.search).substring(1);
         if (loginQuery.length) {
-            debugger;
-            //alert("mounted work")
             let status = getQuery(loginQuery, "status");
             let code = getQuery(loginQuery, "code");
             let orgId = getQuery(loginQuery, "orgid");
 
             this.logIn(code, orgId);
-            //Auth.login(code, orgId)
-            //return;
-        }
-        debugger;
-        if(location.hostname == "localhost"){
-            var localToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEzMTkzMTIsImV4cCI6MTYwMTU3ODUxMn0.BTAhrpz9yePPEoE5iQ5HdXSFzkm5whLW-Gv4bsEf1jc";
-            localStorage.setItem("access_token", localToken);
         }
 
-        if(localStorage.getItem("access_token") != null){
+        if (location.hostname == "localhost") {
+            const today = new Date()
+            const tomorrow = new Date(today)
+            const tomorrow_time = tomorrow.setDate(tomorrow.getDate() + 1)
+
+            var localLogin = `{
+                "accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaG9wSWQiOiI1ZjZkNWY5YjA5N2ZiMjg0YWFkYjc3YTMiLCJpYXQiOjE2MDEzMTkzMTIsImV4cCI6MTYwMTU3ODUxMn0.BTAhrpz9yePPEoE5iQ5HdXSFzkm5whLW-Gv4bsEf1jc",
+                "exp":"${tomorrow_time}"}`;
+            localStorage.setItem("data_login", localLogin);
+        }
+
+        const isExpToken = Auth.isExpToken();
+        if (!isExpToken) {
             this.login = true;
         }
-
-        //localStorage.removeItem("current_id");
     }
 }
 </script>
@@ -520,18 +425,19 @@ body {
     cursor: pointer;
 }
 
-.logout-btn{
+.logout-btn {
     position: absolute;
     top: 20px;
     right: 20px;
     margin: 0;
     padding: 8px 15px;
 }
-a{
+
+a {
     cursor: pointer;
     color: #0b67c1;
     font-weight: bold;
-    margin:  auto;
-    display:inline-block
+    margin: auto;
+    display: inline-block
 }
 </style>
