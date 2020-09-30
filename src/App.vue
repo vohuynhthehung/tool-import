@@ -130,7 +130,7 @@ export default {
             });
         },
         logOut: function(e) {
-            localStorage.removeItem("data_login");
+            localStorage.clear();
             this.login = false;
         },
         viewCampaignProcess: async function() {
