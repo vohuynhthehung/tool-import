@@ -118,7 +118,7 @@ export default {
                     "status": "login"
                 }
             }).then(res => {
-                localStorage.setItem("data_login", res.data);
+                localStorage.setItem("data_login", JSON.stringify(res.data));
                 this.login = true;
                 location = location.origin;
             }).catch(err => {
