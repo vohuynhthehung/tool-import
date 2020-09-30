@@ -1,62 +1,17 @@
-import axios from 'axios';
-import { LocalStorage } from './localstorage'
-import { LOGIN_URL } from '../share/constant';
-
 export class Auth {
-    static loginShop() {
-        return axios.get(LOGIN_URL)
+    static getAccessToken() {
+        const data_login = JSON.parse(localStorage.getItem("data_login"));
+        if(data_login){
+            return data_login.accessToken;
+        }
     }
-    static getTokenStorage() {
-        return LocalStorage.getObjectItem('qhome')
-    }
-    static isTokenExpired() {
-        const session = this.getTokenStorage('qhome');
-        if (session) {
+
+    static isExpToken(){
+        const data_login = JSON.parse(localStorage.getItem("data_login"));
+        if(data_login){
             const now = new Date().getTime();
-            if (now < +session.exp) return false;
+            if (now < data_login.exp) return false;
         }
         return true;
     }
-
-    static login111(code, orgid) {
-        const data = {
-            code,
-            orgid,
-            status: 'login'
-        }
-
-        return axios({
-            method: 'post',
-            url: LOGIN_URL,
-            data: data,
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-    }
-
-
-    static login(code, orgId) {
-        const data = {
-            code,
-            orgId,
-            status: 'login'
-        }
-        axios({
-            "url": "https://nanostcktest.egany.com/api/auth/login",
-            "method": "POST",
-            "headers": {
-                "Content-Type": "application/json",
-                "cache-control": "no-cache"
-            },
-            "processData": false,
-            "data": {
-                "code": code,
-                "orgId": orgId,
-                "status": "login"
-            }
-        })
-    }
-
-
 }
