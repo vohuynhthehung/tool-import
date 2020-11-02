@@ -124,7 +124,7 @@ export default {
             }).catch(err => {
                 this.$swal({
                     title: "",
-                    html: `<p>${err.response.data.message}</p>`,
+                    html: `<p>${err.response.data.message}!</p>`,
                     confirmButtonText: "Đóng"
                 });
             });
