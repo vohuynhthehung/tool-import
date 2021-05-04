@@ -37,7 +37,11 @@
                     <div id="output">
                         <div v-if="err_mess != null" class="alert alert-danger">{{err_mess}}</div>
                         <ul class="product_list">
-                            <li v-for="item in items" :class="item.status"> {{ item.title }}</li>
+                            <li v-for="item in items" :class="item.status"> {{ item.title }}
+                                <div v-if="item.error != null" class="alert alert-danger">
+                                    {{convertErrorToText(item.error)}}
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -81,16 +85,6 @@ const getQuery = (queryString, key) => {
     }
 };
 
-const convertErrorToText = (error) => {
-  if (!error) return null;
-
-  if (error.details) {
-    if (error.details.message) return error.details.message;
-  }
-
-  return error.message;
-}
-
 Vue.use(VueSweetalert2, options);
 export default {
     components: {
@@ -107,8 +101,7 @@ export default {
             coll_total: 0,
             coll_success: 0,
             img_total: 0,
-            img_success: 0,
-            err_mess: null
+            img_success: 0
         }
     },
     methods: {
@@ -202,6 +195,15 @@ export default {
                     console.log("có lỗi", err.response.data.message);
                 });
             }
+        },
+        convertErrorToText: function(error){
+            if (!error) return null;
+
+            if (error.details) {
+                if (error.details.message) return error.details.message;
+            }
+
+            return error.message;
         }
     },
     mounted: function() {
@@ -460,6 +462,7 @@ a {
     margin-bottom: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
+    padding: 2px 10px;
 }
 
 .alert-danger {
