@@ -35,6 +35,7 @@
                 </div>
                 <div class="ega-col-6">
                     <div id="output">
+                        <div v-if="err_mess != null" class="alert alert-danger">{{err_mess}}</div>
                         <ul class="product_list">
                             <li v-for="item in items" :class="item.status"> {{ item.title }}</li>
                         </ul>
@@ -80,6 +81,16 @@ const getQuery = (queryString, key) => {
     }
 };
 
+const convertErrorToText = (error) => {
+  if (!error) return null;
+
+  if (error.details) {
+    if (error.details.message) return error.details.message;
+  }
+
+  return error.message;
+}
+
 Vue.use(VueSweetalert2, options);
 export default {
     components: {
@@ -96,7 +107,8 @@ export default {
             coll_total: 0,
             coll_success: 0,
             img_total: 0,
-            img_success: 0
+            img_success: 0,
+            err_mess: null
         }
     },
     methods: {
@@ -184,6 +196,7 @@ export default {
                     }
                 }).then(res => {
                     this.items = res.data.data;
+                    this.err_mess = convertErrorToText(res.data.error);
                 }).catch(err => {
                     console.log("err here", err.response.data);
                     console.log("có lỗi", err.response.data.message);
@@ -439,5 +452,19 @@ a {
     font-weight: bold;
     margin: auto;
     display: inline-block
+}
+
+.alert {
+    position: relative;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }
 </style>
